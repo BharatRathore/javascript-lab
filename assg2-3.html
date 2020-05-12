@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="assg1">
+        <h3>Assignment 2</h3>
+        <button onclick="dispName()">Print name</button>
+        <p id="print-name"></p>
+    </div>
+    <hr>
+    <div class="assg2">
+        <h3>Assignment 3</h3>
+        <button onclick="showName()">Show Name</button>
+    
+    <p id="show-name">Assignment 3: Bharat</p>
+    </div>
+    <hr>
+    <div class="assg3">
+        <h3>Assignment 4</h3>
+        <button onclick="changeFont()">Change font</button>
+        <p id="asg3" style="font-size: 20px;">Font  size 20px</p>
+    </div>
+    <hr>
+    <div class="assg4">
+        <h3>Assignment 5</h3>
+        <button onclick="showDate()">Show date</button>
+        <p id="show-date"></p>
+    </div>
+    <hr>
+    <div class="assg5">
+        <h3>Assignment 6</h3>
+        <button onclick="copy()">Copy</button> <br><br>
+        <input type="text" name="inp1" id="inp1" placeholder="input 1"> <br><br>
+        <input type="text" name="inp2" id="inp2" placeholder="input 2"> <br><br>
+
+    </div>
+    <hr>
+    
+    <script>
+        //assg2
+        function dispName(){
+            document.getElementById('print-name').innerText="Assignment 2: Bharat"
+        }
+
+        //assg3
+        const show=document.getElementById('show-name')
+        show.style.display="none"
+        function showName(){
+            show.style.display="block"
+        }
+        //assg4
+        const assg3=document.getElementById('asg3')
+        function changeFont(){
+            assg3.style.fontSize="30px"
+            assg3.innerText="Font size 30px"
+        }
+        //assg5
+        const datep=document.getElementById('show-date')
+        function showDate(){
+            datep.innerText=new Date()
+        }
+        //assg6
+        const inp1=document.getElementById('inp1')
+        const inp2=document.getElementById('inp2')
+        function copy(){
+            inp2.value=inp1.value
+        }
+        
+    </script>
+</body>
+</html>
