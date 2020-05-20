@@ -29,7 +29,7 @@
             <label for="">User ID</label> <input type="text" id="id" class="inp" required placeholder="User id">
             <label for="">Password</label> <input type="password" required class="inp" placeholder="Password">
             <label for="">Mobile no.</label> <input type="text" required class="inp" placeholder="Mobile no.">
-            <label for="">Address</label> <textarea name="" id="" required cols="30" class="inp" rows="10" placeholder="Address"></textarea>
+            <label for="">Address</label> <textarea name="" id="txtarea"  cols="30" class="inp" rows="10" placeholder="Address"></textarea>
             <label for="">Age</label> <input type="number" required placeholder="Age" min="0" class="inp">
             </label> <input type="submit"  value="Submit">
             
@@ -46,6 +46,7 @@
         const [userid,password,mobileno,address,age]=[...inputs]
         let regexp=/^[0-9]{10}$/;
         document.getElementById('form').addEventListener('submit',(e)=>{
+            console.log(document.getElementById('txtarea').value)
             valid=true
             status.innerHTML=''
             e.preventDefault()
@@ -60,6 +61,9 @@
             if(!regexp.test(mobileno.value)){
                 status.innerHTML+="Mobile must be a 10 digit number <br>"
                 valid=false
+            }
+            if(document.getElementById('txtarea').value.length<1){
+                status.innerHTML+="Address must be filled <br>"
             }
             if(age.value<18 || age.value>100){
                 status.innerHTML+="Age must be between 18 to 100"
